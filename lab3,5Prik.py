@@ -1,6 +1,8 @@
-week = int(input("Введіть номер тижня (1 або 2): "))
-day = int(input("Введіть номер дня тижня (1-5): "))
-
+try:
+    week = int(input("Введіть номер тижня (1 або 2): "))
+    day = int(input("Введіть номер дня тижня (1-5): "))
+except KeyError:
+    print("Некоректний тиждень або день.")
 
 schedule = {
     1: { # 1 тиждень
@@ -19,7 +21,5 @@ schedule = {
     }
 }
 
-try:
+
     print(f"Ваш розклад: {schedule[week][day]}")
-except KeyError:
-    print("Некоректний тиждень або день.")
